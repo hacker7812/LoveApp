@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            background-image: url(images.jpeg);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 6vw; /* Ajusta o tamanho da fonte proporcionalmente à largura da tela */
+        }
+
+        button {
+            width: 20vw; /* Ajusta a largura do botão proporcionalmente à largura da tela */
+            padding: 3vh; /* Ajusta o padding do botão proporcionalmente à altura da tela */
+            font-size: 5vw; /* Ajusta o tamanho da fonte proporcionalmente à largura da tela */
+            margin: 2vh 0; /* Ajusta a margem do botão proporcionalmente à altura da tela */
+            background-color: #4CAF50;
+            color: white; 
+            border: none;
+            cursor: pointer;   
+            
+            }
+            
+            #sim {
+            background-color: #4CAF50;
+            }
+            
+            #sim:hover {
+            background-color: #3e8e41;
+            }
+            
+            #nao {
+            background-color: #f44336;
+            }
+            
+            #nao:hover {
+            background-color: #d32f2f;
+            
+        }
+
+        #sim:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h1>Quer namorar comigo?</h1>
+        <button id="sim">Sim 😍</button>
+        <button id="nao">Não 😢</button>
+    </div>
+    <script>
+        const botaoSim = document.getElementById('sim');
+        const botaoNao = document.getElementById('nao');
+        const whatsappNumero = "5577981607984";
+        
+        botaoSim.addEventListener('click', () => {
+            alert('Que bom que você aceitou! ❤️');
+            window.location.href = `https://wa.me/${whatsappNumero}`;
+        });
+        
+        botaoNao.addEventListener('click', () => {
+            const maxTop = window.innerHeight - botaoNao.offsetHeight;
+            const maxLeft = window.innerWidth - botaoNao.offsetWidth;
+            botaoNao.style.position = 'absolute';
+            botaoNao.style.top = `${Math.random() * maxTop}px`;
+            botaoNao.style.left = `${Math.random() * maxLeft}px`;
+        });
+    </script>
+</body>
+</html>
